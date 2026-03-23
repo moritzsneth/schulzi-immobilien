@@ -111,25 +111,25 @@ export default function SchulziImmobilienLandingpage() {
   const secondaryProjects = projectTypes.slice(1);
 
   const sectionReveal = {
-    initial: { opacity: 0, y: 30 },
+    initial: { opacity: 0, y: 34 },
     whileInView: { opacity: 1, y: 0 },
     viewport: { once: true, amount: 0.18 },
-    transition: { duration: 0.7 },
+    transition: { duration: 0.72 },
   };
 
   const cardReveal = (delay = 0) => ({
-    initial: { opacity: 0, y: 24 },
+    initial: { opacity: 0, y: 26 },
     whileInView: { opacity: 1, y: 0 },
     viewport: { once: true, amount: 0.18 },
-    transition: { duration: 0.6, delay },
+    transition: { duration: 0.62, delay },
   });
 
   return (
-    <div className="min-h-screen bg-[#f5f1eb] text-slate-900 selection:bg-slate-900 selection:text-white">
-      <header className="sticky top-0 z-50 border-b border-black/5 bg-[#f5f1eb]/75 backdrop-blur-2xl">
+    <div className="min-h-screen bg-[#f5f1eb] text-slate-900 selection:bg-slate-950 selection:text-white">
+      <header className="sticky top-0 z-50 border-b border-black/5 bg-[#f5f1eb]/72 backdrop-blur-2xl">
         <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4 lg:px-8">
           <a href="#top" className="group">
-            <div className="text-[11px] uppercase tracking-[0.28em] text-stone-500">
+            <div className="text-[11px] uppercase tracking-[0.30em] text-stone-500">
               Schwerin · Mecklenburg-Vorpommern
             </div>
             <div className="mt-1 text-xl font-semibold tracking-tight text-slate-950 transition group-hover:opacity-80">
@@ -164,25 +164,29 @@ export default function SchulziImmobilienLandingpage() {
           <div className="absolute inset-x-0 top-0 h-40 bg-gradient-to-b from-white/25 to-transparent" />
 
           <div className="mx-auto max-w-7xl">
-            <div className="grid items-stretch gap-8 lg:grid-cols-[0.95fr_1.05fr]">
+            <div className="grid items-stretch gap-8 lg:grid-cols-[0.93fr_1.07fr]">
               <motion.div
                 initial={{ opacity: 0, y: 28 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.75 }}
-                className="relative flex flex-col justify-between rounded-[2.25rem] border border-white/60 bg-white/72 p-8 shadow-[0_24px_90px_rgba(15,23,42,0.08)] backdrop-blur xl:p-10"
+                transition={{ duration: 0.8 }}
+                className="relative flex flex-col justify-between rounded-[2.4rem] border border-white/60 bg-white/72 p-8 shadow-[0_24px_90px_rgba(15,23,42,0.08)] backdrop-blur xl:p-10"
               >
-                <div className="absolute inset-0 bg-[linear-gradient(135deg,rgba(255,255,255,0.72),transparent_62%)]" />
+                <div className="absolute inset-0 bg-[linear-gradient(135deg,rgba(255,255,255,0.76),transparent_62%)]" />
                 <div className="relative z-10">
                   <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-stone-300/80 bg-stone-100/85 px-4 py-2 text-[11px] font-medium uppercase tracking-[0.24em] text-stone-600 shadow-sm">
                     <Sparkles className="h-3.5 w-3.5" />
                     Architektur · Planung · Immobilien
                   </div>
 
-                  <h1 className="max-w-3xl text-5xl font-semibold leading-[0.96] tracking-[-0.04em] text-slate-950 md:text-6xl xl:text-7xl">
-                    Architektur, die Klarheit schafft.
+                  <h1 className="max-w-3xl text-5xl font-semibold leading-[0.92] tracking-[-0.055em] text-slate-950 md:text-6xl xl:text-7xl">
+                    Architektur,
+                    <br />
+                    die Klarheit
+                    <br />
+                    schafft.
                   </h1>
 
-                  <p className="mt-7 max-w-2xl text-lg leading-8 text-slate-600 md:text-xl">
+                  <p className="mt-8 max-w-2xl text-lg leading-8 text-slate-600 md:text-xl">
                     Planung und Begleitung für Bauherren, die strukturiert
                     entscheiden wollen – von der ersten Idee bis zur fundierten
                     Umsetzung.
@@ -191,7 +195,7 @@ export default function SchulziImmobilienLandingpage() {
                   <div className="mt-10 flex flex-col gap-4 sm:flex-row">
                     <a
                       href="#kontakt"
-                      className="inline-flex items-center justify-center gap-2 rounded-2xl bg-slate-950 px-7 py-4 text-sm font-medium text-white shadow-lg shadow-slate-900/10 transition duration-300 hover:-translate-y-0.5 hover:shadow-xl"
+                      className="group inline-flex items-center justify-center gap-2 rounded-2xl bg-slate-950 px-7 py-4 text-sm font-medium text-white shadow-lg shadow-slate-900/10 transition duration-300 hover:-translate-y-0.5 hover:shadow-xl"
                     >
                       Erstgespräch anfragen
                       <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-0.5" />
@@ -205,12 +209,19 @@ export default function SchulziImmobilienLandingpage() {
                   </div>
                 </div>
 
-                <div className="relative z-10 mt-12 flex flex-wrap gap-4 border-t border-stone-200/80 pt-6 text-sm text-slate-700">
-                  <span>35+ Jahre Erfahrung</span>
-                  <span className="text-stone-400">•</span>
-                  <span>Persönliche Betreuung</span>
-                  <span className="text-stone-400">•</span>
-                  <span>Region Schwerin & Umgebung</span>
+                <div className="relative z-10 mt-12 grid gap-3 border-t border-stone-200/80 pt-6 sm:grid-cols-3">
+                  {[
+                    "35+ Jahre Erfahrung",
+                    "Persönliche Betreuung",
+                    "Region Schwerin & Umgebung",
+                  ].map((item) => (
+                    <div
+                      key={item}
+                      className="rounded-2xl border border-stone-200/80 bg-white/72 px-4 py-3 text-sm text-slate-700"
+                    >
+                      {item}
+                    </div>
+                  ))}
                 </div>
               </motion.div>
 
@@ -218,10 +229,10 @@ export default function SchulziImmobilienLandingpage() {
                 initial={{ opacity: 0, y: 30, scale: 0.985 }}
                 animate={{ opacity: 1, y: 0, scale: 1 }}
                 transition={{ duration: 0.85 }}
-                className="group relative min-h-[680px] overflow-hidden rounded-[2.25rem] border border-black/5 bg-[url('/images/schulzi-haus.webp')] bg-cover bg-center shadow-[0_26px_90px_rgba(15,23,42,0.14)]"
+                className="group relative min-h-[700px] overflow-hidden rounded-[2.4rem] border border-black/5 bg-[url('/images/schulzi-haus.webp')] bg-cover bg-center shadow-[0_26px_90px_rgba(15,23,42,0.14)]"
               >
-                <div className="absolute inset-0 scale-100 bg-[url('/images/schulzi-haus.webp')] bg-cover bg-center transition duration-[1400ms] group-hover:scale-[1.04]" />
-                <div className="absolute inset-0 bg-[linear-gradient(to_top,rgba(15,23,42,0.76)_0%,rgba(15,23,42,0.28)_44%,rgba(15,23,42,0.08)_100%)]" />
+                <div className="absolute inset-0 scale-100 bg-[url('/images/schulzi-haus.webp')] bg-cover bg-center transition duration-[1500ms] group-hover:scale-[1.045]" />
+                <div className="absolute inset-0 bg-[linear-gradient(to_top,rgba(15,23,42,0.80)_0%,rgba(15,23,42,0.28)_44%,rgba(15,23,42,0.06)_100%)]" />
                 <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(255,255,255,0.16),transparent_24%)]" />
 
                 <div className="absolute left-6 top-6 rounded-full border border-white/20 bg-white/10 px-4 py-2 text-[11px] font-medium uppercase tracking-[0.22em] text-white/90 backdrop-blur md:left-8 md:top-8">
@@ -231,13 +242,13 @@ export default function SchulziImmobilienLandingpage() {
                 <motion.div
                   initial={{ opacity: 0, y: 24 }}
                   animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.8, delay: 0.15 }}
-                  className="absolute inset-x-6 bottom-6 rounded-[1.75rem] border border-white/15 bg-slate-950/82 p-7 text-white shadow-2xl shadow-slate-900/20 backdrop-blur md:inset-x-8 md:bottom-8"
+                  transition={{ duration: 0.82, delay: 0.18 }}
+                  className="absolute inset-x-6 bottom-6 rounded-[1.9rem] border border-white/15 bg-slate-950/82 p-7 text-white shadow-2xl shadow-slate-900/20 backdrop-blur md:inset-x-8 md:bottom-8"
                 >
                   <div className="text-[11px] uppercase tracking-[0.24em] text-slate-400">
                     Schulzi-Immobilien
                   </div>
-                  <div className="mt-3 max-w-md text-3xl font-semibold tracking-tight">
+                  <div className="mt-3 max-w-md text-3xl font-semibold leading-tight tracking-tight">
                     Moderne Planung für Bauherren mit architektonischem Anspruch.
                   </div>
 
@@ -268,7 +279,7 @@ export default function SchulziImmobilienLandingpage() {
         <section className="px-6 lg:px-8">
           <motion.div
             {...sectionReveal}
-            className="mx-auto grid max-w-7xl gap-4 rounded-[1.9rem] border border-white/70 bg-white/65 p-5 shadow-[0_14px_42px_rgba(15,23,42,0.05)] backdrop-blur md:grid-cols-4"
+            className="mx-auto grid max-w-7xl gap-4 rounded-[2rem] border border-white/70 bg-white/65 p-5 shadow-[0_14px_42px_rgba(15,23,42,0.05)] backdrop-blur md:grid-cols-4"
           >
             {[
               "Kevin Schulz – Architekt mit 10 Jahren Erfahrung",
@@ -305,13 +316,13 @@ export default function SchulziImmobilienLandingpage() {
           <div className="mt-16 grid gap-6 lg:grid-cols-12">
             <motion.div
               {...sectionReveal}
-              className="group relative min-h-[600px] overflow-hidden rounded-[2.15rem] lg:col-span-7 lg:row-span-2"
+              className="group relative min-h-[620px] overflow-hidden rounded-[2.2rem] lg:col-span-7 lg:row-span-2"
             >
               <div
-                className="absolute inset-0 bg-cover bg-center transition duration-[1400ms] group-hover:scale-[1.04]"
+                className="absolute inset-0 bg-cover bg-center transition duration-[1500ms] group-hover:scale-[1.045]"
                 style={{ backgroundImage: `url(${featuredProject.image})` }}
               />
-              <div className="absolute inset-0 bg-[linear-gradient(to_top,rgba(15,23,42,0.78)_0%,rgba(15,23,42,0.18)_52%,rgba(15,23,42,0.02)_100%)]" />
+              <div className="absolute inset-0 bg-[linear-gradient(to_top,rgba(15,23,42,0.80)_0%,rgba(15,23,42,0.18)_52%,rgba(15,23,42,0.02)_100%)]" />
               <div className="absolute inset-0 opacity-0 transition duration-500 group-hover:opacity-100 bg-[radial-gradient(circle_at_top_right,rgba(255,255,255,0.10),transparent_28%)]" />
               <div className="absolute bottom-0 left-0 right-0 p-8 text-white md:p-10">
                 <div className="text-[11px] uppercase tracking-[0.24em] text-slate-300">
@@ -334,13 +345,13 @@ export default function SchulziImmobilienLandingpage() {
                 <motion.div
                   key={project.title}
                   {...cardReveal(index * 0.08)}
-                  className="group relative min-h-[190px] overflow-hidden rounded-[1.85rem]"
+                  className="group relative min-h-[190px] overflow-hidden rounded-[1.9rem]"
                 >
                   <div
-                    className="absolute inset-0 bg-cover bg-center transition duration-[1400ms] group-hover:scale-[1.04]"
+                    className="absolute inset-0 bg-cover bg-center transition duration-[1500ms] group-hover:scale-[1.045]"
                     style={{ backgroundImage: `url(${project.image})` }}
                   />
-                  <div className="absolute inset-0 bg-[linear-gradient(to_top,rgba(15,23,42,0.80)_0%,rgba(15,23,42,0.22)_55%,rgba(15,23,42,0.03)_100%)]" />
+                  <div className="absolute inset-0 bg-[linear-gradient(to_top,rgba(15,23,42,0.82)_0%,rgba(15,23,42,0.22)_55%,rgba(15,23,42,0.03)_100%)]" />
                   <div className="absolute inset-0 opacity-0 transition duration-500 group-hover:opacity-100 bg-[radial-gradient(circle_at_top_right,rgba(255,255,255,0.10),transparent_32%)]" />
                   <div className="absolute bottom-0 left-0 right-0 p-6 text-white">
                     <h3 className="text-xl font-semibold tracking-tight">
@@ -356,10 +367,7 @@ export default function SchulziImmobilienLandingpage() {
           </div>
         </section>
 
-        <section
-          id="leistungen"
-          className="mx-auto max-w-7xl px-6 py-28 lg:px-8"
-        >
+        <section id="leistungen" className="mx-auto max-w-7xl px-6 py-28 lg:px-8">
           <motion.div {...sectionReveal} className="max-w-3xl">
             <div className="text-sm font-medium uppercase tracking-[0.22em] text-stone-500">
               Leistungen
@@ -502,7 +510,7 @@ export default function SchulziImmobilienLandingpage() {
         <section className="mx-auto max-w-7xl px-6 py-28 lg:px-8">
           <motion.div
             {...sectionReveal}
-            className="overflow-hidden rounded-[2.75rem] border border-white/60 bg-[linear-gradient(135deg,#0f172a_0%,#1f2937_44%,#8a7f73_100%)] px-8 py-14 text-white shadow-[0_28px_90px_rgba(15,23,42,0.16)] md:px-12 md:py-18"
+            className="overflow-hidden rounded-[2.9rem] border border-white/60 bg-[linear-gradient(135deg,#0f172a_0%,#1f2937_44%,#8a7f73_100%)] px-8 py-16 text-white shadow-[0_28px_90px_rgba(15,23,42,0.16)] md:px-12 md:py-20"
           >
             <div className="max-w-4xl">
               <div className="text-sm font-medium uppercase tracking-[0.22em] text-slate-300">
@@ -525,7 +533,7 @@ export default function SchulziImmobilienLandingpage() {
         </section>
 
         <section id="kontakt" className="mx-auto max-w-7xl px-6 pb-24 lg:px-8">
-          <div className="grid gap-8 rounded-[2.5rem] border border-white/70 bg-white/82 p-8 shadow-[0_18px_50px_rgba(15,23,42,0.06)] backdrop-blur md:grid-cols-[1fr_0.9fr] md:p-12">
+          <div className="grid gap-8 rounded-[2.6rem] border border-white/70 bg-white/82 p-8 shadow-[0_18px_50px_rgba(15,23,42,0.06)] backdrop-blur md:grid-cols-[1fr_0.9fr] md:p-12">
             <motion.div {...sectionReveal}>
               <div className="text-sm font-medium uppercase tracking-[0.22em] text-stone-500">
                 Kontakt
@@ -578,9 +586,9 @@ export default function SchulziImmobilienLandingpage() {
                   className="min-h-[140px] w-full rounded-2xl border border-stone-200 bg-white px-4 py-3 outline-none transition duration-300 focus:border-slate-900"
                   placeholder="Worum geht es bei Ihrem Vorhaben?"
                 />
-                <button className="inline-flex w-full items-center justify-center gap-2 rounded-2xl bg-slate-950 px-6 py-4 text-sm font-medium text-white transition duration-300 hover:-translate-y-0.5 hover:shadow-lg">
+                <button className="group inline-flex w-full items-center justify-center gap-2 rounded-2xl bg-slate-950 px-6 py-4 text-sm font-medium text-white transition duration-300 hover:-translate-y-0.5 hover:shadow-lg">
                   Anfrage senden
-                  <ArrowRight className="h-4 w-4" />
+                  <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-0.5" />
                 </button>
               </div>
             </motion.div>
