@@ -1,12 +1,19 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { ArrowRight, Compass, DraftingCompass, MapPinned, PhoneCall, Ruler, Sparkles } from "lucide-react";
+import {
+  ArrowRight,
+  Compass,
+  DraftingCompass,
+  MapPinned,
+  PhoneCall,
+  Sparkles,
+} from "lucide-react";
 
 export default function SchulziImmobilienLandingpage() {
   const navItems = [
-    { label: "Leistungen", href: "#leistungen" },
     { label: "Haustypen", href: "#haustypen" },
+    { label: "Leistungen", href: "#leistungen" },
     { label: "Über uns", href: "#ueber-uns" },
     { label: "Vorteile", href: "#vorteile" },
     { label: "Ablauf", href: "#ablauf" },
@@ -16,42 +23,37 @@ export default function SchulziImmobilienLandingpage() {
   const services = [
     {
       icon: DraftingCompass,
-      title: "Bauplanung & Architektur",
-      text: "Individuelle Baupläne für Einfamilienhäuser – durchdacht, funktional und architektonisch anspruchsvoll. Jedes Projekt wird auf die Bedürfnisse der Bauherren abgestimmt und strukturiert entwickelt.",
+      title: "Bauplanung",
+      text: "Individuelle Baupläne für Einfamilienhäuser – funktional, präzise und architektonisch durchdacht.",
     },
     {
       icon: Compass,
       title: "Beratung für Bauherren",
-      text: "Von der ersten Idee bis zur konkreten Planung: Schulzi-Immobilien unterstützt Bauherren dabei, fundierte Entscheidungen zu treffen – verständlich, transparent und praxisnah.",
+      text: "Von der ersten Idee bis zur konkreten Entscheidung: verständlich, persönlich und mit klarem Blick auf das Wesentliche.",
     },
     {
       icon: MapPinned,
       title: "Grundstücks- & Projektbewertung",
-      text: "Einschätzung von Grundstücken und Bauvorhaben aus architektonischer Perspektive – mit Blick auf Potenzial, Umsetzbarkeit und sinnvolle Nutzungsmöglichkeiten.",
-    },
-    {
-      icon: Ruler,
-      title: "Strukturierte Projektbegleitung",
-      text: "Klare Abläufe, direkte Kommunikation und eine saubere Planung sorgen dafür, dass Projekte effizient und nachvollziehbar umgesetzt werden können.",
+      text: "Fundierte Einschätzungen zu Grundstücken und Bauvorhaben – mit Blick auf Potenzial, Umsetzbarkeit und Qualität.",
     },
   ];
 
   const advantages = [
     {
       title: "Architektonisches Fachverständnis",
-      text: "Nicht nur planen, sondern verstehen, was wirklich funktioniert – gestalterisch, technisch und praktisch.",
+      text: "Nicht nur planen, sondern verstehen, was funktional, gestalterisch und praktisch wirklich trägt.",
     },
     {
       title: "Persönliche Betreuung",
-      text: "Direkter Kontakt, klare Kommunikation und ein Ansprechpartner, der das Projekt wirklich kennt.",
+      text: "Direkter Kontakt, klare Kommunikation und ein Ansprechpartner, der das Projekt im Detail kennt.",
     },
     {
       title: "Hoher Qualitätsanspruch",
-      text: "Jedes Projekt wird mit einem klaren Blick für Architektur, Funktion und Langlebigkeit entwickelt.",
+      text: "Jedes Projekt wird mit Blick auf Langlebigkeit, Substanz und architektonische Klarheit entwickelt.",
     },
     {
       title: "Regional verankert",
-      text: "Vertraut mit den Gegebenheiten in Schwerin und Norddeutschland – nah am Markt, nah an den Bauherren.",
+      text: "Vertraut mit den Gegebenheiten in Schwerin, Mecklenburg-Vorpommern und Norddeutschland.",
     },
   ];
 
@@ -69,48 +71,62 @@ export default function SchulziImmobilienLandingpage() {
     {
       number: "03",
       title: "Planung",
-      text: "Auf Basis Ihrer Ziele wird ein strukturiertes Konzept entwickelt – klar, nachvollziehbar und individuell.",
+      text: "Auf Basis Ihrer Ziele entsteht ein strukturiertes Konzept – klar, nachvollziehbar und individuell.",
     },
     {
       number: "04",
       title: "Begleitung",
-      text: "Während des Projekts stehen wir Ihnen weiterhin zur Seite – mit Erfahrung, Übersicht und direkter Abstimmung.",
+      text: "Auch im weiteren Projektverlauf stehen wir mit Erfahrung, Übersicht und direkter Abstimmung zur Seite.",
     },
   ];
 
   const projectTypes = [
     {
       title: "Bungalow",
+      subtitle: "Reduzierte Architektur mit klarer Struktur.",
       text: "Klare Linien, barrierearme Planung und komfortables Wohnen auf einer Ebene.",
       image: "/images/bungalow.webp",
     },
     {
-      title: "Mehrfamilienhaus",
-      text: "Durchdachte Grundrisse und moderne Architektur für mehrere Wohneinheiten.",
-      image: "/images/mehrfamilienhaus.webp",
+      title: "Stadthaus",
+      subtitle: "Zeitgemäße Architektur mit urbaner Ruhe.",
+      text: "Großzügige Proportionen, klare Fassaden und eine moderne, souveräne Präsenz.",
+      image: "/images/stadthaus.webp",
     },
     {
       title: "Satteldachhaus mit Kapitänsgiebel",
-      text: "Norddeutscher Charakter mit klassischer Formensprache und hochwertiger Ausstrahlung.",
+      subtitle: "Norddeutscher Charakter, präzise interpretiert.",
+      text: "Klassische Formensprache mit hochwertiger Ausstrahlung und regionaler Identität.",
       image: "/images/satteldachhaus-kapitaensgiebel.webp",
     },
     {
-      title: "Stadthaus",
-      text: "Zeitgemäße Architektur mit urbaner Klarheit, Struktur und großzügigem Raumgefühl.",
-      image: "/images/stadthaus.webp",
+      title: "Mehrfamilienhaus",
+      subtitle: "Strukturierte Planung für mehrere Wohneinheiten.",
+      text: "Durchdachte Grundrisse und moderne Architektur für anspruchsvolle Wohnkonzepte.",
+      image: "/images/mehrfamilienhaus.webp",
     },
   ];
 
-  const fadeInUp = {
-    initial: { opacity: 0, y: 24 },
+  const featuredProject = projectTypes[0];
+  const secondaryProjects = projectTypes.slice(1);
+
+  const sectionReveal = {
+    initial: { opacity: 0, y: 30 },
     whileInView: { opacity: 1, y: 0 },
-    viewport: { once: true, amount: 0.25 },
-    transition: { duration: 0.6},
+    viewport: { once: true, amount: 0.18 },
+    transition: { duration: 0.7 },
   };
 
+  const cardReveal = (delay = 0) => ({
+    initial: { opacity: 0, y: 24 },
+    whileInView: { opacity: 1, y: 0 },
+    viewport: { once: true, amount: 0.18 },
+    transition: { duration: 0.6, delay },
+  });
+
   return (
-    <div className="min-h-screen bg-[#f5f1eb] text-slate-900">
-      <header className="sticky top-0 z-50 border-b border-black/5 bg-[#f5f1eb]/80 backdrop-blur-xl">
+    <div className="min-h-screen bg-[#f5f1eb] text-slate-900 selection:bg-slate-900 selection:text-white">
+      <header className="sticky top-0 z-50 border-b border-black/5 bg-[#f5f1eb]/75 backdrop-blur-2xl">
         <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4 lg:px-8">
           <a href="#top" className="group">
             <div className="text-[11px] uppercase tracking-[0.28em] text-stone-500">
@@ -126,7 +142,7 @@ export default function SchulziImmobilienLandingpage() {
               <a
                 key={item.label}
                 href={item.href}
-                className="text-sm text-slate-700 transition hover:text-slate-950"
+                className="relative text-sm text-slate-700 transition hover:text-slate-950 after:absolute after:-bottom-1 after:left-0 after:h-px after:w-0 after:bg-slate-950 after:transition-all after:duration-300 hover:after:w-full"
               >
                 {item.label}
               </a>
@@ -135,7 +151,7 @@ export default function SchulziImmobilienLandingpage() {
 
           <a
             href="#kontakt"
-            className="rounded-full border border-slate-900/15 bg-white/80 px-5 py-2.5 text-sm font-medium text-slate-900 shadow-sm transition hover:-translate-y-0.5 hover:border-slate-900 hover:bg-slate-900 hover:text-white"
+            className="inline-flex items-center justify-center rounded-2xl border border-slate-900/15 bg-white/85 px-5 py-2.5 text-sm font-medium text-slate-900 shadow-sm transition duration-300 hover:-translate-y-0.5 hover:border-slate-900 hover:bg-slate-900 hover:text-white"
           >
             Erstgespräch anfragen
           </a>
@@ -143,173 +159,136 @@ export default function SchulziImmobilienLandingpage() {
       </header>
 
       <main id="top">
-        <section className="relative overflow-hidden px-6 pb-16 pt-10 lg:px-8 lg:pb-24 lg:pt-14">
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(120,113,108,0.24),transparent_28%),radial-gradient(circle_at_85%_20%,rgba(15,23,42,0.12),transparent_22%),linear-gradient(to_bottom,rgba(255,255,255,0.4),transparent)]" />
+        <section className="relative overflow-hidden px-6 pb-20 pt-10 lg:px-8 lg:pb-32 lg:pt-16">
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(120,113,108,0.22),transparent_28%),radial-gradient(circle_at_85%_15%,rgba(15,23,42,0.10),transparent_24%),linear-gradient(to_bottom,rgba(255,255,255,0.35),transparent)]" />
+          <div className="absolute inset-x-0 top-0 h-40 bg-gradient-to-b from-white/25 to-transparent" />
+
           <div className="mx-auto max-w-7xl">
-            <div className="grid items-stretch gap-8 lg:grid-cols-[1.05fr_0.95fr]">
+            <div className="grid items-stretch gap-8 lg:grid-cols-[0.95fr_1.05fr]">
               <motion.div
-                {...fadeInUp}
-                className="relative overflow-hidden rounded-[2rem] border border-white/60 bg-white/70 p-8 shadow-[0_20px_80px_rgba(15,23,42,0.08)] backdrop-blur xl:p-10"
+                initial={{ opacity: 0, y: 28 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.75 }}
+                className="relative flex flex-col justify-between rounded-[2.25rem] border border-white/60 bg-white/72 p-8 shadow-[0_24px_90px_rgba(15,23,42,0.08)] backdrop-blur xl:p-10"
               >
-                <div className="absolute inset-0 bg-[linear-gradient(135deg,rgba(255,255,255,0.65),transparent_60%)]" />
-                <div className="relative z-10 flex h-full flex-col justify-between">
-                  <div>
-                    <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-stone-300/80 bg-stone-100/80 px-4 py-2 text-[11px] font-medium uppercase tracking-[0.24em] text-stone-600">
-                      <Sparkles className="h-3.5 w-3.5" />
-                      Architektur · Planung · Immobilien
-                    </div>
-
-                    <h1 className="max-w-3xl text-5xl font-semibold leading-[1.02] tracking-tight text-slate-950 md:text-6xl xl:text-7xl">
-                      Architektur. Planung. Immobilien – mit klarem Blick fürs Ganze.
-                    </h1>
-
-                    <p className="mt-7 max-w-2xl text-lg leading-8 text-slate-600 md:text-xl">
-                      Schulzi-Immobilien begleitet Bauherren von der ersten Idee bis zur fundierten Planung – mit architektonischer Expertise, persönlicher Betreuung und einem hohen Anspruch an Qualität.
-                    </p>
-
-                    <div className="mt-10 flex flex-col gap-4 sm:flex-row">
-                      <a
-                        href="#kontakt"
-                        className="inline-flex items-center justify-center gap-2 rounded-full bg-slate-950 px-7 py-4 text-sm font-medium text-white shadow-lg shadow-slate-900/10 transition hover:-translate-y-0.5"
-                      >
-                        Erstgespräch anfragen
-                        <ArrowRight className="h-4 w-4" />
-                      </a>
-                      <a
-                        href="#leistungen"
-                        className="inline-flex items-center justify-center rounded-full border border-stone-300 bg-white px-7 py-4 text-sm font-medium text-slate-900 transition hover:border-slate-900"
-                      >
-                        Leistungen ansehen
-                      </a>
-                    </div>
+                <div className="absolute inset-0 bg-[linear-gradient(135deg,rgba(255,255,255,0.72),transparent_62%)]" />
+                <div className="relative z-10">
+                  <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-stone-300/80 bg-stone-100/85 px-4 py-2 text-[11px] font-medium uppercase tracking-[0.24em] text-stone-600 shadow-sm">
+                    <Sparkles className="h-3.5 w-3.5" />
+                    Architektur · Planung · Immobilien
                   </div>
 
-                  <div className="mt-12 grid gap-3 sm:grid-cols-3">
-                    {[
-                      "Persönlich betreut",
-                      "Architektonisch fundiert",
-                      "Regional verankert",
-                    ].map((item) => (
-                      <div
-                        key={item}
-                        className="rounded-[1.25rem] border border-stone-200 bg-white/85 px-4 py-4 text-sm text-slate-700 shadow-sm"
-                      >
-                        {item}
-                      </div>
-                    ))}
+                  <h1 className="max-w-3xl text-5xl font-semibold leading-[0.96] tracking-[-0.04em] text-slate-950 md:text-6xl xl:text-7xl">
+                    Architektur, die Klarheit schafft.
+                  </h1>
+
+                  <p className="mt-7 max-w-2xl text-lg leading-8 text-slate-600 md:text-xl">
+                    Planung und Begleitung für Bauherren, die strukturiert
+                    entscheiden wollen – von der ersten Idee bis zur fundierten
+                    Umsetzung.
+                  </p>
+
+                  <div className="mt-10 flex flex-col gap-4 sm:flex-row">
+                    <a
+                      href="#kontakt"
+                      className="inline-flex items-center justify-center gap-2 rounded-2xl bg-slate-950 px-7 py-4 text-sm font-medium text-white shadow-lg shadow-slate-900/10 transition duration-300 hover:-translate-y-0.5 hover:shadow-xl"
+                    >
+                      Erstgespräch anfragen
+                      <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-0.5" />
+                    </a>
+                    <a
+                      href="#leistungen"
+                      className="inline-flex items-center justify-center rounded-2xl border border-stone-300 bg-white px-7 py-4 text-sm font-medium text-slate-900 transition duration-300 hover:-translate-y-0.5 hover:border-slate-900"
+                    >
+                      Leistungen ansehen
+                    </a>
                   </div>
+                </div>
+
+                <div className="relative z-10 mt-12 flex flex-wrap gap-4 border-t border-stone-200/80 pt-6 text-sm text-slate-700">
+                  <span>35+ Jahre Erfahrung</span>
+                  <span className="text-stone-400">•</span>
+                  <span>Persönliche Betreuung</span>
+                  <span className="text-stone-400">•</span>
+                  <span>Region Schwerin & Umgebung</span>
                 </div>
               </motion.div>
 
               <motion.div
-                {...fadeInUp}
-                transition={{ duration: 0.75 }}
-                className="relative min-h-[620px] overflow-hidden rounded-[2rem] border border-black/5 bg-[url('/images/schulzi-haus.webp')] bg-cover bg-center shadow-[0_24px_80px_rgba(15,23,42,0.12)]"
+                initial={{ opacity: 0, y: 30, scale: 0.985 }}
+                animate={{ opacity: 1, y: 0, scale: 1 }}
+                transition={{ duration: 0.85 }}
+                className="group relative min-h-[680px] overflow-hidden rounded-[2.25rem] border border-black/5 bg-[url('/images/schulzi-haus.webp')] bg-cover bg-center shadow-[0_26px_90px_rgba(15,23,42,0.14)]"
               >
-                <div className="absolute inset-0 bg-[linear-gradient(to_top,rgba(15,23,42,0.72)_0%,rgba(15,23,42,0.28)_42%,rgba(15,23,42,0.08)_100%)]" />
-                <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(255,255,255,0.20),transparent_22%)]" />
+                <div className="absolute inset-0 scale-100 bg-[url('/images/schulzi-haus.webp')] bg-cover bg-center transition duration-[1400ms] group-hover:scale-[1.04]" />
+                <div className="absolute inset-0 bg-[linear-gradient(to_top,rgba(15,23,42,0.76)_0%,rgba(15,23,42,0.28)_44%,rgba(15,23,42,0.08)_100%)]" />
+                <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(255,255,255,0.16),transparent_24%)]" />
 
                 <div className="absolute left-6 top-6 rounded-full border border-white/20 bg-white/10 px-4 py-2 text-[11px] font-medium uppercase tracking-[0.22em] text-white/90 backdrop-blur md:left-8 md:top-8">
                   Moderne Architektur in Norddeutschland
                 </div>
 
-                <div className="absolute inset-x-6 bottom-6 rounded-[1.75rem] border border-white/15 bg-slate-950/88 p-7 text-white shadow-2xl shadow-slate-900/20 backdrop-blur md:inset-x-8 md:bottom-8">
-                  <div className="flex items-start justify-between gap-6">
-                    <div>
-                      <div className="text-[11px] uppercase tracking-[0.24em] text-slate-400">
-                        Schulzi-Immobilien
-                      </div>
-                      <div className="mt-3 max-w-sm text-3xl font-semibold tracking-tight">
-                        Moderne Planung für Bauherren mit architektonischem Anspruch.
-                      </div>
-                    </div>
-                    <div className="hidden rounded-2xl border border-white/10 bg-white/5 px-4 py-3 text-right md:block">
-                      <div className="text-[11px] uppercase tracking-[0.2em] text-slate-400">
-                        Erfahrung gesamt
-                      </div>
-                      <div className="mt-2 text-lg font-semibold">35+ Jahre</div>
-                    </div>
+                <motion.div
+                  initial={{ opacity: 0, y: 24 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.8, delay: 0.15 }}
+                  className="absolute inset-x-6 bottom-6 rounded-[1.75rem] border border-white/15 bg-slate-950/82 p-7 text-white shadow-2xl shadow-slate-900/20 backdrop-blur md:inset-x-8 md:bottom-8"
+                >
+                  <div className="text-[11px] uppercase tracking-[0.24em] text-slate-400">
+                    Schulzi-Immobilien
+                  </div>
+                  <div className="mt-3 max-w-md text-3xl font-semibold tracking-tight">
+                    Moderne Planung für Bauherren mit architektonischem Anspruch.
                   </div>
 
-                  <div className="mt-6 grid gap-3 sm:grid-cols-2">
-                    {[
-                      "Einfamilienhäuser",
-                      "Baupläne & Beratung",
-                      "Grundstücksbewertung",
-                      "Schwerin & Norddeutschland",
-                    ].map((item) => (
-                      <div
-                        key={item}
-                        className="rounded-2xl border border-white/10 bg-white/5 px-4 py-3 text-sm text-slate-200"
-                      >
-                        {item}
+                  <div className="mt-6 grid gap-3 border-t border-white/10 pt-5 sm:grid-cols-2">
+                    <div>
+                      <div className="text-[11px] uppercase tracking-[0.18em] text-slate-400">
+                        Erfahrung
                       </div>
-                    ))}
+                      <div className="mt-1 text-sm text-slate-200">
+                        35+ Jahre im Familienverbund
+                      </div>
+                    </div>
+                    <div>
+                      <div className="text-[11px] uppercase tracking-[0.18em] text-slate-400">
+                        Fokus
+                      </div>
+                      <div className="mt-1 text-sm text-slate-200">
+                        Bauplanung, Beratung, Grundstücksbewertung
+                      </div>
+                    </div>
                   </div>
-                </div>
+                </motion.div>
               </motion.div>
             </div>
           </div>
         </section>
 
         <section className="px-6 lg:px-8">
-          <div className="mx-auto grid max-w-7xl gap-6 lg:grid-cols-3">
+          <motion.div
+            {...sectionReveal}
+            className="mx-auto grid max-w-7xl gap-4 rounded-[1.9rem] border border-white/70 bg-white/65 p-5 shadow-[0_14px_42px_rgba(15,23,42,0.05)] backdrop-blur md:grid-cols-4"
+          >
             {[
-              ["Kevin Schulz", "Architekt mit 10 Jahren Erfahrung in Planung, Beratung und Bauherren-Begleitung."],
-              ["Zwei Generationen", "Gemeinsam mit seinem Vater vereint Schulzi-Immobilien über 35 Jahre Erfahrung und architektonisches Know-how."],
-              ["Starke Partnerschaften", "Enge Zusammenarbeit mit einem führenden Architekturbüro der Region für hochwertige, durchdachte Lösungen."],
-            ].map(([title, text], index) => (
+              "Kevin Schulz – Architekt mit 10 Jahren Erfahrung",
+              "Zwei Generationen – 35+ Jahre gebündelte Projekterfahrung",
+              "Enge Zusammenarbeit mit einem führenden Architekturbüro der Region",
+              "Regional verankert in Schwerin und Norddeutschland",
+            ].map((item, index) => (
               <motion.div
-                key={title}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.55, delay: index * 0.08 }}
-                className="rounded-[1.75rem] border border-white/70 bg-white/75 p-6 shadow-[0_12px_36px_rgba(15,23,42,0.05)] backdrop-blur"
+                key={item}
+                {...cardReveal(index * 0.06)}
+                className="rounded-2xl border border-stone-200/80 bg-white/72 px-4 py-4 text-sm leading-6 text-slate-700 transition duration-300 hover:-translate-y-0.5 hover:shadow-md"
               >
-                <div className="text-lg font-semibold tracking-tight text-slate-950">{title}</div>
-                <p className="mt-3 text-sm leading-7 text-slate-600">{text}</p>
+                {item}
               </motion.div>
             ))}
-          </div>
-        </section>
-
-        <section id="leistungen" className="mx-auto max-w-7xl px-6 py-24 lg:px-8">
-          <motion.div {...fadeInUp} className="max-w-3xl">
-            <div className="text-sm font-medium uppercase tracking-[0.22em] text-stone-500">
-              Leistungen
-            </div>
-            <h2 className="mt-4 text-4xl font-semibold tracking-tight text-slate-950 md:text-5xl">
-              Leistungen, die Architektur und Immobilienkompetenz verbinden
-            </h2>
           </motion.div>
-
-          <div className="mt-14 grid gap-6 md:grid-cols-2">
-            {services.map((service, index) => {
-              const Icon = service.icon;
-              return (
-                <motion.div
-                  key={service.title}
-                  initial={{ opacity: 0, y: 22 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true, amount: 0.2 }}
-                  transition={{ duration: 0.55, delay: index * 0.08 }}
-                  className="group rounded-[2rem] border border-white/70 bg-white/80 p-8 shadow-[0_14px_40px_rgba(15,23,42,0.05)] backdrop-blur transition hover:-translate-y-1 hover:shadow-[0_20px_50px_rgba(15,23,42,0.08)]"
-                >
-                  <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-stone-100 text-slate-900 transition group-hover:bg-slate-950 group-hover:text-white">
-                    <Icon className="h-5 w-5" />
-                  </div>
-                  <div className="mt-6 text-xl font-semibold tracking-tight text-slate-950">
-                    {service.title}
-                  </div>
-                  <p className="mt-4 text-base leading-8 text-slate-600">{service.text}</p>
-                </motion.div>
-              );
-            })}
-          </div>
         </section>
-        <section id="haustypen" className="mx-auto max-w-7xl px-6 py-24 lg:px-8">
-          <motion.div {...fadeInUp} className="max-w-3xl">
+
+        <section id="haustypen" className="mx-auto max-w-7xl px-6 py-28 lg:px-8">
+          <motion.div {...sectionReveal} className="max-w-3xl">
             <div className="text-sm font-medium uppercase tracking-[0.22em] text-stone-500">
               Haustypen & Referenzen
             </div>
@@ -317,62 +296,146 @@ export default function SchulziImmobilienLandingpage() {
               Architektur, die zum norddeutschen Stil und zur Zielgruppe passt
             </h2>
             <p className="mt-6 text-lg leading-8 text-slate-600">
-              Von Bungalows bis zu Mehrfamilienhäusern: Schulzi-Immobilien plant und begleitet Projekte mit klarem architektonischem Anspruch, regionalem Verständnis und einem Blick für stimmige Lösungen.
+              Von Bungalows bis zu Mehrfamilienhäusern: Schulzi-Immobilien plant
+              und begleitet Projekte mit klarem architektonischem Anspruch,
+              regionalem Verständnis und einem Blick für stimmige Lösungen.
             </p>
           </motion.div>
 
-          <div className="mt-14 grid gap-6 md:grid-cols-2 xl:grid-cols-4">
-            {projectTypes.map((project, index) => (
-              <motion.div
-                key={project.title}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.55, delay: index * 0.08 }}
-                className="overflow-hidden rounded-[2rem] border border-white/70 bg-white/85 shadow-[0_14px_40px_rgba(15,23,42,0.06)]"
-              >
-                <div
-                  className="h-64 w-full bg-cover bg-center"
-                  style={{ backgroundImage: `url(${project.image})` }}
-                />
-                <div className="p-6">
-                  <div className="text-xl font-semibold tracking-tight text-slate-950">
-                    {project.title}
-                  </div>
-                  <p className="mt-3 text-sm leading-7 text-slate-600">{project.text}</p>
+          <div className="mt-16 grid gap-6 lg:grid-cols-12">
+            <motion.div
+              {...sectionReveal}
+              className="group relative min-h-[600px] overflow-hidden rounded-[2.15rem] lg:col-span-7 lg:row-span-2"
+            >
+              <div
+                className="absolute inset-0 bg-cover bg-center transition duration-[1400ms] group-hover:scale-[1.04]"
+                style={{ backgroundImage: `url(${featuredProject.image})` }}
+              />
+              <div className="absolute inset-0 bg-[linear-gradient(to_top,rgba(15,23,42,0.78)_0%,rgba(15,23,42,0.18)_52%,rgba(15,23,42,0.02)_100%)]" />
+              <div className="absolute inset-0 opacity-0 transition duration-500 group-hover:opacity-100 bg-[radial-gradient(circle_at_top_right,rgba(255,255,255,0.10),transparent_28%)]" />
+              <div className="absolute bottom-0 left-0 right-0 p-8 text-white md:p-10">
+                <div className="text-[11px] uppercase tracking-[0.24em] text-slate-300">
+                  Featured Projekttyp
                 </div>
-              </motion.div>
-            ))}
+                <h3 className="mt-3 text-3xl font-semibold tracking-tight md:text-4xl">
+                  {featuredProject.title}
+                </h3>
+                <p className="mt-3 max-w-xl text-lg text-slate-200">
+                  {featuredProject.subtitle}
+                </p>
+                <p className="mt-5 max-w-xl text-sm leading-7 text-slate-300">
+                  {featuredProject.text}
+                </p>
+              </div>
+            </motion.div>
+
+            <div className="grid gap-6 lg:col-span-5 lg:grid-rows-3">
+              {secondaryProjects.map((project, index) => (
+                <motion.div
+                  key={project.title}
+                  {...cardReveal(index * 0.08)}
+                  className="group relative min-h-[190px] overflow-hidden rounded-[1.85rem]"
+                >
+                  <div
+                    className="absolute inset-0 bg-cover bg-center transition duration-[1400ms] group-hover:scale-[1.04]"
+                    style={{ backgroundImage: `url(${project.image})` }}
+                  />
+                  <div className="absolute inset-0 bg-[linear-gradient(to_top,rgba(15,23,42,0.80)_0%,rgba(15,23,42,0.22)_55%,rgba(15,23,42,0.03)_100%)]" />
+                  <div className="absolute inset-0 opacity-0 transition duration-500 group-hover:opacity-100 bg-[radial-gradient(circle_at_top_right,rgba(255,255,255,0.10),transparent_32%)]" />
+                  <div className="absolute bottom-0 left-0 right-0 p-6 text-white">
+                    <h3 className="text-xl font-semibold tracking-tight">
+                      {project.title}
+                    </h3>
+                    <p className="mt-2 text-sm text-slate-200">
+                      {project.subtitle}
+                    </p>
+                  </div>
+                </motion.div>
+              ))}
+            </div>
           </div>
         </section>
 
-        <section id="ueber-uns" className="bg-slate-950 text-white">
-          <div className="mx-auto grid max-w-7xl gap-12 px-6 py-24 lg:grid-cols-[0.9fr_1.1fr] lg:px-8">
-            <motion.div {...fadeInUp}>
+        <section
+          id="leistungen"
+          className="mx-auto max-w-7xl px-6 py-28 lg:px-8"
+        >
+          <motion.div {...sectionReveal} className="max-w-3xl">
+            <div className="text-sm font-medium uppercase tracking-[0.22em] text-stone-500">
+              Leistungen
+            </div>
+            <h2 className="mt-4 text-4xl font-semibold tracking-tight text-slate-950 md:text-5xl">
+              Planung, die Klarheit schafft
+            </h2>
+            <p className="mt-6 text-lg leading-8 text-slate-600">
+              Architektur, Beratung und fundierte Projektbewertung – präzise,
+              verständlich und auf eine saubere Entscheidungsgrundlage
+              ausgerichtet.
+            </p>
+          </motion.div>
+
+          <div className="mt-16 grid gap-6 md:grid-cols-3">
+            {services.map((service, index) => {
+              const Icon = service.icon;
+              return (
+                <motion.div
+                  key={service.title}
+                  {...cardReveal(index * 0.08)}
+                  className="group rounded-[2rem] border border-white/70 bg-white/80 p-8 shadow-[0_14px_40px_rgba(15,23,42,0.05)] backdrop-blur transition duration-300 hover:-translate-y-1 hover:shadow-[0_22px_54px_rgba(15,23,42,0.08)]"
+                >
+                  <div className="flex h-11 w-11 items-center justify-center rounded-2xl bg-stone-100 text-slate-900 transition duration-300 group-hover:bg-slate-950 group-hover:text-white">
+                    <Icon className="h-5 w-5" />
+                  </div>
+                  <div className="mt-6 text-xl font-semibold tracking-tight text-slate-950">
+                    {service.title}
+                  </div>
+                  <p className="mt-4 text-base leading-8 text-slate-600">
+                    {service.text}
+                  </p>
+                </motion.div>
+              );
+            })}
+          </div>
+        </section>
+
+        <section id="ueber-uns" className="relative overflow-hidden bg-slate-950 text-white">
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(255,255,255,0.08),transparent_22%)]" />
+          <div className="mx-auto grid max-w-7xl gap-12 px-6 py-28 lg:grid-cols-[0.9fr_1.1fr] lg:px-8">
+            <motion.div {...sectionReveal}>
               <div className="text-sm font-medium uppercase tracking-[0.22em] text-slate-400">
                 Über Schulzi-Immobilien
               </div>
               <h2 className="mt-4 text-4xl font-semibold tracking-tight md:text-5xl">
-                Zwei Generationen Architekturverständnis – ein gemeinsamer Anspruch
+                Zwei Generationen Architekturverständnis.
               </h2>
             </motion.div>
 
-            <motion.div {...fadeInUp} className="space-y-6 text-lg leading-8 text-slate-300">
+            <motion.div
+              {...sectionReveal}
+              className="space-y-6 text-lg leading-8 text-slate-300"
+            >
               <p>
-                Hinter Schulzi-Immobilien stehen Kevin Schulz und sein Vater – zwei Architekten mit zusammen über 35 Jahren Erfahrung in der Planung und Begleitung von Bauprojekten.
+                Hinter Schulzi-Immobilien stehen Kevin Schulz und sein Vater –
+                zwei Architekten mit zusammen über 35 Jahren Erfahrung in der
+                Planung und Begleitung von Bauprojekten.
               </p>
               <p>
-                Was sie verbindet, ist ein gemeinsamer Anspruch: Projekte nicht nur umzusetzen, sondern von Anfang an strukturiert zu durchdenken – funktional, architektonisch und wirtschaftlich.
+                Was sie verbindet, ist ein gemeinsamer Anspruch: Projekte nicht
+                nur umzusetzen, sondern von Anfang an strukturiert zu denken –
+                funktional, architektonisch und wirtschaftlich.
               </p>
               <p>
-                Durch die enge Zusammenarbeit mit einem führenden Architekturbüro der Region entstehen Lösungen, die weit über Standard hinausgehen – individuell geplant, klar strukturiert und mit einem hohen Qualitätsanspruch.
+                Durch die enge Zusammenarbeit mit einem führenden
+                Architekturbüro der Region entstehen Lösungen, die weit über
+                Standard hinausgehen – individuell geplant, klar strukturiert
+                und mit hohem Qualitätsanspruch.
               </p>
             </motion.div>
           </div>
         </section>
 
-        <section id="vorteile" className="mx-auto max-w-7xl px-6 py-24 lg:px-8">
-          <motion.div {...fadeInUp} className="max-w-3xl">
+        <section id="vorteile" className="mx-auto max-w-7xl px-6 py-28 lg:px-8">
+          <motion.div {...sectionReveal} className="max-w-3xl">
             <div className="text-sm font-medium uppercase tracking-[0.22em] text-stone-500">
               Warum Schulzi-Immobilien
             </div>
@@ -381,28 +444,31 @@ export default function SchulziImmobilienLandingpage() {
             </h2>
           </motion.div>
 
-          <div className="mt-14 grid gap-6 md:grid-cols-2 xl:grid-cols-4">
+          <div className="mt-16 grid gap-6 md:grid-cols-2 xl:grid-cols-4">
             {advantages.map((advantage, index) => (
               <motion.div
                 key={advantage.title}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.55, delay: index * 0.08 }}
-                className="rounded-[2rem] border border-stone-200/70 bg-[#fbf8f3] p-8 shadow-[0_12px_36px_rgba(15,23,42,0.04)]"
+                {...cardReveal(index * 0.07)}
+                className="rounded-[2rem] border border-stone-200/70 bg-[#fbf8f3] p-8 shadow-[0_12px_36px_rgba(15,23,42,0.04)] transition duration-300 hover:-translate-y-1 hover:shadow-[0_18px_40px_rgba(15,23,42,0.06)]"
               >
                 <div className="text-lg font-semibold tracking-tight text-slate-950">
                   {advantage.title}
                 </div>
-                <p className="mt-4 text-sm leading-7 text-slate-600">{advantage.text}</p>
+                <p className="mt-4 text-sm leading-7 text-slate-600">
+                  {advantage.text}
+                </p>
               </motion.div>
             ))}
           </div>
         </section>
 
-        <section id="ablauf" className="border-y border-black/5 bg-white/70 backdrop-blur">
-          <div className="mx-auto max-w-7xl px-6 py-24 lg:px-8">
-            <motion.div {...fadeInUp} className="max-w-3xl">
+        <section
+          id="ablauf"
+          className="relative overflow-hidden border-y border-black/5 bg-white/70 backdrop-blur"
+        >
+          <div className="absolute inset-0 bg-[linear-gradient(to_bottom,rgba(255,255,255,0.35),transparent_24%,transparent_76%,rgba(255,255,255,0.2))]" />
+          <div className="mx-auto max-w-7xl px-6 py-28 lg:px-8">
+            <motion.div {...sectionReveal} className="max-w-3xl">
               <div className="text-sm font-medium uppercase tracking-[0.22em] text-stone-500">
                 Ablauf
               </div>
@@ -411,50 +477,56 @@ export default function SchulziImmobilienLandingpage() {
               </h2>
             </motion.div>
 
-            <div className="mt-14 grid gap-6 md:grid-cols-2 xl:grid-cols-4">
+            <div className="mt-16 grid gap-6 md:grid-cols-2 xl:grid-cols-4">
               {steps.map((step, index) => (
                 <motion.div
                   key={step.number}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.55, delay: index * 0.08 }}
-                  className="rounded-[2rem] border border-stone-200 bg-white p-8 shadow-[0_10px_30px_rgba(15,23,42,0.04)]"
+                  {...cardReveal(index * 0.08)}
+                  className="rounded-[2rem] border border-stone-200 bg-white p-8 shadow-[0_10px_30px_rgba(15,23,42,0.04)] transition duration-300 hover:-translate-y-1 hover:shadow-[0_18px_40px_rgba(15,23,42,0.06)]"
                 >
-                  <div className="text-sm font-medium tracking-[0.25em] text-stone-400">
+                  <div className="text-4xl font-semibold tracking-[-0.06em] text-stone-300">
                     {step.number}
                   </div>
-                  <div className="mt-4 text-xl font-semibold tracking-tight text-slate-950">
+                  <div className="mt-5 text-xl font-semibold tracking-tight text-slate-950">
                     {step.title}
                   </div>
-                  <p className="mt-4 text-sm leading-7 text-slate-600">{step.text}</p>
+                  <p className="mt-4 text-sm leading-7 text-slate-600">
+                    {step.text}
+                  </p>
                 </motion.div>
               ))}
             </div>
           </div>
         </section>
 
-        <section className="mx-auto max-w-7xl px-6 py-24 lg:px-8">
+        <section className="mx-auto max-w-7xl px-6 py-28 lg:px-8">
           <motion.div
-            {...fadeInUp}
-            className="overflow-hidden rounded-[2.5rem] border border-white/60 bg-[linear-gradient(135deg,#0f172a_0%,#1f2937_46%,#8a7f73_100%)] px-8 py-12 text-white shadow-[0_24px_80px_rgba(15,23,42,0.14)] md:px-12 md:py-16"
+            {...sectionReveal}
+            className="overflow-hidden rounded-[2.75rem] border border-white/60 bg-[linear-gradient(135deg,#0f172a_0%,#1f2937_44%,#8a7f73_100%)] px-8 py-14 text-white shadow-[0_28px_90px_rgba(15,23,42,0.16)] md:px-12 md:py-18"
           >
             <div className="max-w-4xl">
               <div className="text-sm font-medium uppercase tracking-[0.22em] text-slate-300">
                 Statement
               </div>
               <h2 className="mt-4 text-4xl font-semibold tracking-tight md:text-5xl">
-                Gute Architektur beginnt nicht auf dem Papier – sondern mit Klarheit.
+                Gute Architektur beginnt nicht auf dem Papier – sondern mit
+                Klarheit.
               </h2>
               <p className="mt-6 max-w-3xl text-lg leading-8 text-slate-200">
-                Wer ein Haus plant, trifft Entscheidungen fürs Leben. Umso wichtiger ist ein Partner, der nicht nur einzelne Schritte begleitet, sondern das Gesamtbild versteht. Schulzi-Immobilien steht für eine strukturierte, persönliche und fachlich fundierte Herangehensweise – von der ersten Idee bis zur konkreten Planung.
+                Wer ein Haus plant, trifft Entscheidungen fürs Leben. Umso
+                wichtiger ist ein Partner, der nicht nur einzelne Schritte
+                begleitet, sondern das Gesamtbild versteht. Schulzi-Immobilien
+                steht für eine strukturierte, persönliche und fachlich fundierte
+                Herangehensweise – von der ersten Idee bis zur konkreten
+                Planung.
               </p>
             </div>
           </motion.div>
         </section>
+
         <section id="kontakt" className="mx-auto max-w-7xl px-6 pb-24 lg:px-8">
-          <div className="grid gap-8 rounded-[2.5rem] border border-white/70 bg-white/80 p-8 shadow-[0_18px_50px_rgba(15,23,42,0.06)] backdrop-blur md:grid-cols-[1fr_0.9fr] md:p-12">
-            <motion.div {...fadeInUp}>
+          <div className="grid gap-8 rounded-[2.5rem] border border-white/70 bg-white/82 p-8 shadow-[0_18px_50px_rgba(15,23,42,0.06)] backdrop-blur md:grid-cols-[1fr_0.9fr] md:p-12">
+            <motion.div {...sectionReveal}>
               <div className="text-sm font-medium uppercase tracking-[0.22em] text-stone-500">
                 Kontakt
               </div>
@@ -462,7 +534,9 @@ export default function SchulziImmobilienLandingpage() {
                 Lassen Sie uns über Ihr Bauvorhaben sprechen
               </h2>
               <p className="mt-6 max-w-2xl text-lg leading-8 text-slate-600">
-                Ob erste Idee, konkretes Projekt oder Fragen zur Umsetzbarkeit – im persönlichen Austausch klären wir die nächsten sinnvollen Schritte.
+                Ob erste Idee, konkretes Projekt oder Fragen zur Umsetzbarkeit –
+                im persönlichen Austausch klären wir die nächsten sinnvollen
+                Schritte.
               </p>
 
               <div className="mt-8 space-y-4 text-sm text-slate-700">
@@ -471,31 +545,40 @@ export default function SchulziImmobilienLandingpage() {
                   Kontaktanfrage mit späterer Terminbuchung per Bot möglich
                 </div>
                 <div className="flex flex-wrap gap-3">
-                  <span className="rounded-full bg-stone-100 px-4 py-2">Schwerin & Umgebung</span>
-                  <span className="rounded-full bg-stone-100 px-4 py-2">Mecklenburg-Vorpommern</span>
-                  <span className="rounded-full bg-stone-100 px-4 py-2">Norddeutschland</span>
+                  <span className="rounded-full bg-stone-100 px-4 py-2">
+                    Schwerin & Umgebung
+                  </span>
+                  <span className="rounded-full bg-stone-100 px-4 py-2">
+                    Mecklenburg-Vorpommern
+                  </span>
+                  <span className="rounded-full bg-stone-100 px-4 py-2">
+                    Norddeutschland
+                  </span>
                 </div>
               </div>
             </motion.div>
 
-            <motion.div {...fadeInUp} className="rounded-[2rem] border border-stone-200 bg-[#faf7f2] p-6 md:p-8">
+            <motion.div
+              {...sectionReveal}
+              className="rounded-[2rem] border border-stone-200 bg-[#faf7f2] p-6 md:p-8 shadow-sm"
+            >
               <div className="text-lg font-semibold tracking-tight text-slate-950">
                 Erstgespräch anfragen
               </div>
               <div className="mt-6 space-y-4">
                 <input
-                  className="w-full rounded-2xl border border-stone-200 bg-white px-4 py-3 outline-none transition focus:border-slate-900"
+                  className="w-full rounded-2xl border border-stone-200 bg-white px-4 py-3 outline-none transition duration-300 focus:border-slate-900"
                   placeholder="Ihr Name"
                 />
                 <input
-                  className="w-full rounded-2xl border border-stone-200 bg-white px-4 py-3 outline-none transition focus:border-slate-900"
+                  className="w-full rounded-2xl border border-stone-200 bg-white px-4 py-3 outline-none transition duration-300 focus:border-slate-900"
                   placeholder="Ihre E-Mail"
                 />
                 <textarea
-                  className="min-h-[140px] w-full rounded-2xl border border-stone-200 bg-white px-4 py-3 outline-none transition focus:border-slate-900"
+                  className="min-h-[140px] w-full rounded-2xl border border-stone-200 bg-white px-4 py-3 outline-none transition duration-300 focus:border-slate-900"
                   placeholder="Worum geht es bei Ihrem Vorhaben?"
                 />
-                <button className="inline-flex w-full items-center justify-center gap-2 rounded-full bg-slate-950 px-6 py-4 text-sm font-medium text-white transition hover:-translate-y-0.5">
+                <button className="inline-flex w-full items-center justify-center gap-2 rounded-2xl bg-slate-950 px-6 py-4 text-sm font-medium text-white transition duration-300 hover:-translate-y-0.5 hover:shadow-lg">
                   Anfrage senden
                   <ArrowRight className="h-4 w-4" />
                 </button>
@@ -508,7 +591,9 @@ export default function SchulziImmobilienLandingpage() {
       <footer className="border-t border-black/5 bg-[#efe8de]">
         <div className="mx-auto flex max-w-7xl flex-col gap-6 px-6 py-10 text-sm text-slate-600 md:flex-row md:items-end md:justify-between lg:px-8">
           <div>
-            <div className="text-base font-semibold text-slate-950">Schulzi-Immobilien</div>
+            <div className="text-base font-semibold text-slate-950">
+              Schulzi-Immobilien
+            </div>
             <div className="mt-2">Kevin Schulz · Schwerin & Umgebung</div>
             <div>Persönlich. Strukturiert. Fachlich fundiert.</div>
           </div>
