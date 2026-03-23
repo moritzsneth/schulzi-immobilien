@@ -1,5 +1,6 @@
 "use client";
 
+import { useState } from "react";
 import { motion } from "framer-motion";
 import {
   ArrowRight,
@@ -10,7 +11,38 @@ import {
   Sparkles,
 } from "lucide-react";
 
+type FormData = {
+  name: string;
+  email: string;
+  phone: string;
+  projectType: string;
+  hasProperty: string;
+  timeline: string;
+  message: string;
+};
+
+const WEBHOOK_URL = "https://n8n.automatiq.tech/webhook/schulzi-lead";
+
 export default function SchulziImmobilienLandingpage() {
+  const [formData, setFormData] = useState<FormData>({
+    name: "",
+    email: "",
+    phone: "",
+    projectType: "",
+    hasProperty: "",
+    timeline: "",
+    message: "",
+  });
+
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitState, setSubmitState] = useState<{
+    type: "idle" | "success" | "error";
+    message: string;
+  }>({
+    type: "idle",
+    message: "",
+  });
+
   const navItems = [
     { label: "Haustypen", href: "#haustypen" },
     { label: "Leistungen", href: "#leistungen" },
@@ -123,6 +155,65 @@ export default function SchulziImmobilienLandingpage() {
     viewport: { once: true, amount: 0.18 },
     transition: { duration: 0.62, delay },
   });
+
+  function handleChange(
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>
+  ) {
+    const { name, value } = e.target;
+    setFormData((prev) => ({
+      ...prev,
+      [name]: value,
+    }));
+  }
+
+  async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
+    e.preventDefault();
+    setIsSubmitting(true);
+    setSubmitState({ type: "idle", message: "" });
+
+    try {
+      const response = await fetch(WEBHOOK_URL, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          ...formData,
+          source: "Landingpage",
+          page: "Schulzi-Immobilien",
+          submittedAt: new Date().toISOString(),
+        }),
+      });
+
+      if (!response.ok) {
+        throw new Error("Webhook request failed");
+      }
+
+      setSubmitState({
+        type: "success",
+        message: "Vielen Dank. Ihre Anfrage wurde erfolgreich versendet.",
+      });
+
+      setFormData({
+        name: "",
+        email: "",
+        phone: "",
+        projectType: "",
+        hasProperty: "",
+        timeline: "",
+        message: "",
+      });
+    } catch (error) {
+      console.error("Form submit error:", error);
+      setSubmitState({
+        type: "error",
+        message:
+          "Beim Versenden ist ein Problem aufgetreten. Bitte versuchen Sie es erneut.",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
+  }
 
   return (
     <div className="min-h-screen bg-[#f5f1eb] text-slate-900 selection:bg-slate-950 selection:text-white">
@@ -533,7 +624,7 @@ export default function SchulziImmobilienLandingpage() {
         </section>
 
         <section id="kontakt" className="mx-auto max-w-7xl px-6 pb-24 lg:px-8">
-          <div className="grid gap-8 rounded-[2.6rem] border border-white/70 bg-white/82 p-8 shadow-[0_18px_50px_rgba(15,23,42,0.06)] backdrop-blur md:grid-cols-[1fr_0.9fr] md:p-12">
+          <div className="grid gap-8 rounded-[2.6rem] border border-white/70 bg-white/82 p-8 shadow-[0_18px_50px_rgba(15,23,42,0.06)] backdrop-blur md:grid-cols-[1fr_0.95fr] md:p-12">
             <motion.div {...sectionReveal}>
               <div className="text-sm font-medium uppercase tracking-[0.22em] text-stone-500">
                 Kontakt
@@ -566,32 +657,119 @@ export default function SchulziImmobilienLandingpage() {
               </div>
             </motion.div>
 
-            <motion.div
+            <motion.form
               {...sectionReveal}
+              onSubmit={handleSubmit}
               className="rounded-[2rem] border border-stone-200 bg-[#faf7f2] p-6 md:p-8 shadow-sm"
             >
               <div className="text-lg font-semibold tracking-tight text-slate-950">
                 Erstgespräch anfragen
               </div>
-              <div className="mt-6 space-y-4">
+
+              <div className="mt-6 grid gap-4 sm:grid-cols-2">
                 <input
+                  name="name"
+                  value={formData.name}
+                  onChange={handleChange}
                   className="w-full rounded-2xl border border-stone-200 bg-white px-4 py-3 outline-none transition duration-300 focus:border-slate-900"
-                  placeholder="Ihr Name"
+                  placeholder="Ihr Name *"
+                  required
                 />
                 <input
+                  name="email"
+                  type="email"
+                  value={formData.email}
+                  onChange={handleChange}
                   className="w-full rounded-2xl border border-stone-200 bg-white px-4 py-3 outline-none transition duration-300 focus:border-slate-900"
-                  placeholder="Ihre E-Mail"
+                  placeholder="Ihre E-Mail *"
+                  required
                 />
-                <textarea
-                  className="min-h-[140px] w-full rounded-2xl border border-stone-200 bg-white px-4 py-3 outline-none transition duration-300 focus:border-slate-900"
-                  placeholder="Worum geht es bei Ihrem Vorhaben?"
-                />
-                <button className="group inline-flex w-full items-center justify-center gap-2 rounded-2xl bg-slate-950 px-6 py-4 text-sm font-medium text-white transition duration-300 hover:-translate-y-0.5 hover:shadow-lg">
-                  Anfrage senden
-                  <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-0.5" />
-                </button>
               </div>
-            </motion.div>
+
+              <div className="mt-4 grid gap-4 sm:grid-cols-2">
+                <input
+                  name="phone"
+                  value={formData.phone}
+                  onChange={handleChange}
+                  className="w-full rounded-2xl border border-stone-200 bg-white px-4 py-3 outline-none transition duration-300 focus:border-slate-900"
+                  placeholder="Telefon (optional)"
+                />
+                <select
+                  name="projectType"
+                  value={formData.projectType}
+                  onChange={handleChange}
+                  className="w-full rounded-2xl border border-stone-200 bg-white px-4 py-3 outline-none transition duration-300 focus:border-slate-900"
+                  required
+                >
+                  <option value="">Projekttyp auswählen *</option>
+                  <option value="Bungalow">Bungalow</option>
+                  <option value="Stadthaus">Stadthaus</option>
+                  <option value="Satteldachhaus mit Kapitänsgiebel">
+                    Satteldachhaus mit Kapitänsgiebel
+                  </option>
+                  <option value="Mehrfamilienhaus">Mehrfamilienhaus</option>
+                  <option value="Allgemeine Anfrage">Allgemeine Anfrage</option>
+                </select>
+              </div>
+
+              <div className="mt-4 grid gap-4 sm:grid-cols-2">
+                <select
+                  name="hasProperty"
+                  value={formData.hasProperty}
+                  onChange={handleChange}
+                  className="w-full rounded-2xl border border-stone-200 bg-white px-4 py-3 outline-none transition duration-300 focus:border-slate-900"
+                  required
+                >
+                  <option value="">Grundstück vorhanden? *</option>
+                  <option value="Ja">Ja</option>
+                  <option value="Nein">Nein</option>
+                  <option value="In Klärung">In Klärung</option>
+                </select>
+
+                <input
+                  name="timeline"
+                  value={formData.timeline}
+                  onChange={handleChange}
+                  className="w-full rounded-2xl border border-stone-200 bg-white px-4 py-3 outline-none transition duration-300 focus:border-slate-900"
+                  placeholder="Geplanter Zeitraum (z. B. 2026)"
+                  required
+                />
+              </div>
+
+              <div className="mt-4">
+                <textarea
+                  name="message"
+                  value={formData.message}
+                  onChange={handleChange}
+                  className="min-h-[160px] w-full rounded-2xl border border-stone-200 bg-white px-4 py-3 outline-none transition duration-300 focus:border-slate-900"
+                  placeholder="Worum geht es bei Ihrem Vorhaben? *"
+                  required
+                />
+              </div>
+
+              {submitState.type !== "idle" && (
+                <div
+                  className={`mt-4 rounded-2xl px-4 py-3 text-sm ${
+                    submitState.type === "success"
+                      ? "border border-emerald-200 bg-emerald-50 text-emerald-700"
+                      : "border border-red-200 bg-red-50 text-red-700"
+                  }`}
+                >
+                  {submitState.message}
+                </div>
+              )}
+
+              <button
+                type="submit"
+                disabled={isSubmitting}
+                className="group mt-6 inline-flex w-full items-center justify-center gap-2 rounded-2xl bg-slate-950 px-6 py-4 text-sm font-medium text-white transition duration-300 hover:-translate-y-0.5 hover:shadow-lg disabled:cursor-not-allowed disabled:opacity-70"
+              >
+                {isSubmitting ? "Anfrage wird gesendet..." : "Anfrage senden"}
+                {!isSubmitting && (
+                  <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-0.5" />
+                )}
+              </button>
+            </motion.form>
           </div>
         </section>
       </main>
