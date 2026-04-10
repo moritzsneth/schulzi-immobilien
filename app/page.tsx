@@ -785,10 +785,10 @@ export default function SchulziImmobilienLandingpage() {
           </div>
 
           <div className="flex gap-6">
-            <a href="#" className="transition hover:text-slate-950">
+            <a href="/impressum" className="transition hover:text-slate-950">
               Impressum
             </a>
-            <a href="#" className="transition hover:text-slate-950">
+            <a href="/datenschutz" className="transition hover:text-slate-950">
               Datenschutz
             </a>
           </div>
